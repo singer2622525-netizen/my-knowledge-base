@@ -1,0 +1,24 @@
+# macOS 系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# 临时/备份文件
+*.bak
+*.tmp
+*~
+*.swp
+*.swo
+
+# 编辑器
+.vscode/
+.idea/
+
+# 显式排除潜在敏感文件
+.env
+.env.*
+*.key
+*.pem
+*.p12
+secrets/
