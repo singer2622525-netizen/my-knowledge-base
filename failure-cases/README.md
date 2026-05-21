@@ -16,6 +16,7 @@ failure-cases/
 │   ├── 04-技术债务清单.md
 │   └── 05-预防措施.md
 ├── personality-assessment-deployment-2026-04.md  # 招聘人格评测：Tunnel/standalone/DB/API
+├── hr-recruitment-pymysql-commit-2026-05.md    # HR 招聘助手：PyMySQL 未 commit 导入误报
 └── [其他案例]/                   # 其他失败案例
 ```
 
@@ -53,6 +54,20 @@ failure-cases/
 
 **相关文档**:
 - [复盘全文（单一维护）](./personality-assessment-deployment-2026-04.md)
+
+### HR 招聘助手 PyMySQL 未 commit（2026-05）
+
+**案例类型**: 数据库事务、部署验收疏漏  
+**严重程度**: 🟡 中（登录 403，修复后正常）  
+**案例价值**: ⭐⭐⭐⭐ 高（脚本 `[ok]` 与库中 0 行矛盾，PyMySQL 通用）
+
+**核心问题**:
+- `create_user()` INSERT 后未 `conn.commit()`，连接关闭事务回滚
+- 同连接内 SELECT 可见行，脚本误报成功
+- 排查链长，先后怀疑 JSAPI、钉钉权限、PM2 未读 `.env`
+
+**相关文档**:
+- [复盘全文（单一维护）](./hr-recruitment-pymysql-commit-2026-05.md)
 
 ---
 
@@ -168,5 +183,5 @@ failure-cases/
 ---
 
 **创建日期**: 2026年1月
-**最后更新**: 2026年4月
+**最后更新**: 2026年5月
 **维护者**: DevOps团队
