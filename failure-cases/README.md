@@ -24,6 +24,12 @@ failure-cases/
 
 ## 案例索引
 
+### 门铃用旧 m4.yml 误判测试号密码没配（2026-08）
+
+**案例类型**: 误判根因  
+**核心问题**: PMS 测号登不上被说成 M4 没配密钥；实际是门铃读了 fetch 前的旧 yaml  
+**相关文档**: [摘要](./m4-doorbell-stale-m4-yml-2026-08.md)（全文在 global-governance）
+
 ### Next-AI-Draw-IO Web部署失败
 
 **案例类型**: 技术选型错误、架构设计偏差
