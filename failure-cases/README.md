@@ -24,6 +24,12 @@ failure-cases/
 
 ## 案例索引
 
+### 门铃只发 main、未核对其它已上线分支（2026-08）
+
+**案例类型**: 发布真源误判  
+**核心问题**: ERP 同事 feat 已上线，门铃只发 main，现网菜单被盖掉  
+**相关文档**: [摘要](./ailink-erp-feat-branch-overwrite-2026-08.md)（全文在 global-governance）
+
 ### 门铃用旧 m4.yml 误判测试号密码没配（2026-08）
 
 **案例类型**: 误判根因  
